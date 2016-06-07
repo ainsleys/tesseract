@@ -1,7 +1,7 @@
 {
   "name": "webvr-boilerplate",
-  "version": "0.4.3",
-  "description": "A starting point for web-based VR experiences that work in both Cardboard and Oculus.",
+  "version": "0.0.0",
+  "description": "WIP for sound annotation in VR",
   "main": "src/main.js",
   "directories": {
     "test": "test"
@@ -24,15 +24,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borismus/webvr-boilerplate.git"
+    "url": "git+https://github.com/ainsleys/soundVR.git"
   },
   "keywords": [
     "vr"
   ],
-  "author": "Boris Smus",
+  "author": "Ainsleys",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/borismus/webvr-boilerplate/issues"
+    "url": "https://github.com/ainsleys/soundVR/issues"
   },
-  "homepage": "https://github.com/borismus/webvr-boilerplate#readme"
+  "homepage": "https://github.com/ainsleys/soundVR#readme"
 }
