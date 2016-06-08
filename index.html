@@ -211,13 +211,23 @@ scene.add(cube);
 // Kick off animation loop
 requestAnimationFrame(animate);
 
+
+//for now, just create object on spacebar. Next, attach sound?
 function createAudioObject(){
   //will make audio object at location
   //var geometry = new THREE.BoxGeometry(0.25, 0.25, 0.25)
   //var material = new THREE.MeshNormalMaterial();
-  var audioCube = new THREE.Mesh(geometry, material)
-  var audioClip = new THREE.audio
-  audioCube.add()
+  var audioCube = new THREE.BoxGeometry(40, 40, 40);
+
+  var material_1 = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+  });
+
+  var mesh1 = new THREE.Mesh(cube, material_1);
+  mesh1.position.set(0, 20, 100);
+
+  //var audioClip = new THREE.audio
+  //audioCube.add()
   console.log("We got this far!")
 
 }
