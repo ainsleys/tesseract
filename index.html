@@ -176,10 +176,43 @@ function onTextureLoaded(texture) {
   skybox.position.y = boxSize/2;
   scene.add(skybox);
 
+
+  //create an actual floor
+  //starting with this one. We can also use planegeometry,. Not sure which will be better :/
+  var terrainShape = new THREE.CubeGeometry(15, 0.5, 15);
+  //audioCube.position.x = camera.position.x;
+  //audioCube.position.y= camera.position.y;
+  //audioCube.position.z = camera.position.z;
+  var material_1 = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+  });
+
+  var terrain= new THREE.Mesh(terrainShape, material_1);
+  terrain.position.y = 0;
+  scene.add(terrain);
+  //collidableMeshList.push(terrain);
+/*  //working on getting collision working.
+    for (var vertexIndex = 0; vertexIndex < MovingCube.geometry.vertices.length; vertexIndex++)
+  {   
+    var localVertex = MovingCube.geometry.vertices[vertexIndex].clone();
+    var globalVertex = localVertex.applyMatrix4( MovingCube.matrix );
+    var directionVector = globalVertex.sub( MovingCube.position );
+    
+    var ray = new THREE.Raycaster( originPoint, directionVector.clone().normalize() );
+    var collisionResults = ray.intersectObjects( collidableMeshList );
+    if ( collisionResults.length > 0 && collisionResults[0].distance < directionVector.length() ) 
+      appendText(" Hit ");*/
+
+    //https://stemkoski.github.io/Three.js/Collision-Detection.html
+
   // For high end VR devices like Vive and Oculus, take into account the stage
   // parameters provided.
   setupStage();
 }
+
+
+
+
 
 
 // Create a VR manager helper to enter and exit VR mode.
@@ -212,33 +245,6 @@ scene.add(cube);
 requestAnimationFrame(animate);
 
 
-//for now, just create object on spacebar. Next, attach sound?
-function createAudioObject(){
-  //will make audio object at location
-  //var geometry = new THREE.BoxGeometry(0.25, 0.25, 0.25)
-  //var material = new THREE.MeshNormalMaterial();
-  var audioCube = new THREE.CubeGeometry(0.5, 0.5, 0.5);
-  //audioCube.position.x = camera.position.x;
-  //audioCube.position.y= camera.position.y;
-  //audioCube.position.z = camera.position.z;
-  var material_1 = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-  });
-
-  var mesh1 = new THREE.Mesh(audioCube, material_1);
-  mesh1.position.set(camera.position.x, camera.position.y, camera.position.z);
-  console.log(mesh1)
-  console.log(mesh1);
-  console.log(camera.position.x);
-  console.log(camera.position.y);
-  console.log(camera.position.z);
-  scene.add(mesh1);
-
-  //var audioClip = new THREE.audio
-  //audioCube.add()
-  console.log("We got this far!")
-
-}
 
 function onKey(event) {
   if (event.keyCode == 32) {
