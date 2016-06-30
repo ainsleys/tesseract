@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "three": "^0.76.1",
-    "webvr-polyfill": "^0.9.5"
+    "tween": "^0.9.0",
+    "webvr-polyfill": "^0.9.14"
   },
   "devDependencies": {
     "browserify": "latest",
